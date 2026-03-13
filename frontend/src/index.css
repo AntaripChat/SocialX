@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    @apply bg-dark-400 text-slate-100 font-sans;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-dark-100 rounded-full;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-brand-500 hover:bg-brand-600 text-white font-bold py-2 px-5 rounded-full transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-outline {
+    @apply border border-slate-600 hover:border-slate-400 text-slate-100 font-bold py-2 px-5 rounded-full transition-all duration-200;
+  }
+  .input-field {
+    @apply w-full bg-dark-300 border border-dark-100 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-brand-500 transition-colors duration-200;
+  }
+  .card {
+    @apply bg-dark-300 border border-dark-100 rounded-2xl overflow-hidden;
+  }
+  .nav-item {
+    @apply flex items-center gap-4 px-4 py-3 rounded-full text-slate-400 hover:text-slate-100 hover:bg-white/5 transition-all duration-150 font-medium text-lg cursor-pointer;
+  }
+  .nav-item-active {
+    @apply text-brand-500 bg-brand-500/10;
+  }
+  .post-action {
+    @apply flex items-center gap-2 text-slate-500 hover:text-brand-500 transition-colors duration-150 text-sm cursor-pointer bg-none border-none p-0;
+  }
+}
