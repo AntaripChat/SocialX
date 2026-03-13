@@ -7,7 +7,7 @@ A modern, full-stack social media application built with the MERN stack.
 ## 🗂 Project Structure
 
 ```
-twitter-app/
+socialx/
 ├── backend/          # Express.js + MongoDB API
 │   ├── config/       # DB connection
 │   ├── controllers/  # Route handlers (MVC)
@@ -33,32 +33,38 @@ twitter-app/
 
 ## 🚀 Quick Start
 
-### 1. Backend Setup
+### 1. Environment Setup
 
+First, configure the environment variables for the backend:
 ```bash
 cd backend
-npm install
-
-# Copy and configure environment variables
 cp .env.example .env
 # Edit .env with your MongoDB URI and JWT secret
 
-# Create uploads directory
+# Create uploads directory (if needed)
 mkdir uploads
-
-# Start development server
-npm run dev
+cd ..
 ```
 
-### 2. Frontend Setup
+### 2. Install Dependencies
+
+From the root directory (`socialx/`), you can install all dependencies for the root, backend, and frontend at once using the custom script:
 
 ```bash
-cd frontend
-npm install
+npm run install:all
+```
+
+### 3. Run the Application (Concurrent Mode)
+
+Instead of running the frontend and backend in separate terminal windows, you can start both development servers concurrently from the root directory:
+
+```bash
 npm run dev
 ```
 
-### 3. Open your browser
+This uses `concurrently` to run both `"npm run dev --prefix backend"` and `"npm run dev --prefix frontend"`.
+
+### 4. Open your browser
 
 - Frontend: http://localhost:5173
 - Backend API: http://localhost:5000
